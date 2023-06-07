@@ -1,7 +1,7 @@
 # Stage 1: Build the application
 FROM gradle:7.3.1-jdk17 as build
 
-RUN chown newuser /home/gradle/project
+RUN sudo chown newuser /home/gradle/project
 USER newuser
 WORKDIR /home/gradle/project
 
