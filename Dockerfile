@@ -5,7 +5,7 @@ WORKDIR /home/gradle/project
 
 COPY . .
 
-RUN gradle build -x test
+RUN gradle build -x --debug test
 
 # Stage 2: Run the application
 FROM eclipse-temurin:17-jre
