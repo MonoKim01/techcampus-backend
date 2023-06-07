@@ -7,6 +7,8 @@ COPY . .
 
 # Java 프록시 설정
 RUN mkdir -p /root/.gradle 
+RUN chown newuser /root/.gradle
+USER newuser
 RUN echo "systemProp.http.proxyHost=krmp-proxy.9rum.cc\nsystemProp.http.proxyPort=3128\nsystemProp.https.proxyHost=krmp-proxy.9rum.cc\nsystemProp.https.proxyPort=3128" > /root/.gradle/gradle.properties
 
 RUN gradle build -x test
