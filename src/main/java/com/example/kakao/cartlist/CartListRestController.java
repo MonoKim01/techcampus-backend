@@ -38,4 +38,9 @@ public class CartListRestController {
     public void clear(@AuthenticationPrincipal User user) {
         cartListService.clear(user);
     }
+    
+    @DeleteMapping("/clear/test")
+    public void clearTest(@AuthenticationPrincipal User user) {
+        cartListService.clear(user);
+    }
 }
